@@ -7,7 +7,20 @@ import { TaskService } from '../task.service';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  tasks: TaskNode[] = [];
+  tasks: ITask[] = [
+    {
+      id: '5707a8c6-5104-48f5-b6b5-b30941740027',
+      candidate: 'szalkowska.weronika',
+      task: 'Complete the Angular application',
+      isCompleted: 0
+    },
+    {
+      id: '63c7aa62-220d-4a3f-8644-f5c8b4a06029',
+      candidate: 'szalkowska.weronika',
+      task: 'Read the task requirements',
+      isCompleted: 0
+    }
+  ];
 
   constructor(private taskService: TaskService) { }
 
@@ -16,10 +29,7 @@ export class TaskListComponent implements OnInit {
   }
 
   getTasks() {
-    console.log("FETCHED TASKS")
     this.taskService.getTasks().subscribe(tasks => {
-      console.log("FETCHED TASKS")
-      console.log(tasks)
       this.tasks = tasks;
     });
   }
