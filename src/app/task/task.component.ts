@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TaskService } from '../task.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { TaskService } from '../task.service';
 })
 export class TaskComponent {
   @Input() task: ITask;
+  @Output() deletedTask = new EventEmitter();
   constructor(private taskService: TaskService) { }
 
   checkboxChanged(task) {
@@ -17,7 +18,9 @@ export class TaskComponent {
   }
 
   deleteTask(id) {
-    this.taskService.deleteTask(id).subscribe(res => console.log(res))
+    this.taskService.deleteTask(id).subscribe(res => {
+      this.deletedTask.emit();
+    })
   }
 
   private createFormData() {

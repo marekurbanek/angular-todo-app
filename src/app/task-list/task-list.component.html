@@ -1,4 +1,4 @@
 <app-new-task (addedTask)='getTasks()'></app-new-task>
 <ul class="todo__list">
-  <app-task *ngFor='let task of tasks' [task]='task'></app-task>
+  <app-task *ngFor='let task of tasks' [task]='task' (deletedTask)='getTasks()'></app-task>
 </ul>
