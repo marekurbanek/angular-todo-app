@@ -12,6 +12,6 @@
       [(value)]="task.task"  
       class="todo_list_input" 
     />
-    <button class="todo_list_delete">x</button>
+    <button (click)="deleteTask(task.id)" class="todo_list_delete">x</button>
   </label>
 </li>

@@ -16,4 +16,8 @@ export class TaskService {
   addOrUpdateTask(formData): Observable<any> {
     return this.http.post('http://tests.mpcreation.net/api/urbanek.marek', formData);
   }
+
+  deleteTask(id): Observable<any> {
+    return this.http.delete(`http://tests.mpcreation.net/api/urbanek.marek/${id}`);
+  }
 }

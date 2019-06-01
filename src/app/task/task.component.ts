@@ -16,6 +16,10 @@ export class TaskComponent {
     this.taskService.addOrUpdateTask(formData).subscribe();
   }
 
+  deleteTask(id) {
+    this.taskService.deleteTask(id).subscribe(res => console.log(res))
+  }
+
   private createFormData() {
     const formData = new FormData();
     formData.append('id', this.task.id);
