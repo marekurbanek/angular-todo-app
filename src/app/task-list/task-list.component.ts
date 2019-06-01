@@ -3,7 +3,14 @@ import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task-list',
-  templateUrl: './task-list.component.html'
+  templateUrl: './task-list.component.html',
+  styles: [`
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  `]
 })
 export class TaskListComponent implements OnInit {
   tasks: ITask[] = [];

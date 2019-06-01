@@ -1,0 +1,41 @@
+input[type="text"] {
+  border: 0;
+  width: 100%;
+  box-shadow: none;
+  outline: none;
+}
+
+li {
+  border-bottom: 1px solid #eeeeee;
+  line-height: 1.5;
+  padding: 0.5rem 1.25rem;
+}
+
+li:hover {
+  background: #efefef;
+}
+
+li:hover input[type="text"] {
+  background: #efefef;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1;
+}
+
+.todo_list_delete {
+  margin-left: 0.7rem;
+  border-radius: 5px;
+  background-color: #e25858;
+  border: 0;
+  color: white;
+  font-weight: bold;
+}

@@ -3,7 +3,21 @@ import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-new-task',
-  templateUrl: './new-task.component.html'
+  templateUrl: './new-task.component.html',
+  styles: [`
+    .todo__input {
+      display: inline-block;
+      border: 1px solid #cccccc;
+      padding: 0.5rem;
+      width: calc( 100% - 1rem );
+      box-shadow: none;
+      outline: none;
+    }
+    .todo__add {
+      padding: 1.25rem 1.25rem;
+      border-bottom: 1px solid #eeeeee;
+    }
+  `]
 })
 
 export class NewTaskComponent implements OnInit {
