@@ -1,14 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-.todo__container {
-  margin: 2rem auto;
-  width: 20rem;
-
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-
-  color: #333333;
-  font-family: Tahoma;
-}
 
 .todo__add {
   padding: 1.25rem 1.25rem;
