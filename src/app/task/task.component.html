@@ -1,6 +1,16 @@
 <li>
   <label>
-    <input type="checkbox" [checked]="task.is_completed" (change)="checkboxChanged(task)" />
-    <input type="text" [(value)]="task.task" class="todo_list_input" />
+    <input 
+      type="checkbox" 
+      [disabled]='task.is_completed'
+      [checked]="task.is_completed" 
+      (change)="checkboxChanged(task)" 
+      />
+      <input 
+      type="text" 
+      [disabled]='task.is_completed'
+      [(value)]="task.task"  
+      class="todo_list_input" 
+    />
   </label>
 </li>
