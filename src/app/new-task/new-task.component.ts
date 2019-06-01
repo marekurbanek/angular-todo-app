@@ -35,7 +35,7 @@ export class NewTaskComponent implements OnInit {
   private createFormData() {
     const formData = new FormData();
     formData.append('task', this.newTask);
-    formData.append('is_completed', 'false');
+    formData.append('is_completed', '0');
     return formData;
   }
 }
