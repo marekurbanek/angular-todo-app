@@ -1,6 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
 import { TaskService } from '../task.service';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-task',
@@ -8,7 +7,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class TaskComponent {
   @Input() task: ITask;
-  taskForm: FormGroup;
   constructor(private taskService: TaskService) { }
 
   checkboxChanged(task) {
