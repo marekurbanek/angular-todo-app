@@ -12,4 +12,8 @@ export class TaskService {
   getTasks(): Observable<any> {
     return this.http.get('http://tests.mpcreation.net/api/urbanek.marek');
   }
+
+  addTask(formData): Observable<any> {
+    return this.http.post('http://tests.mpcreation.net/api/urbanek.marek', formData);
+  }
 }
