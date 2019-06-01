@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TaskService } from '../task.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-new-task',
@@ -9,21 +8,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class NewTaskComponent implements OnInit {
   newTask = '';
-  uploadForm: FormGroup;
   @Output() addedTask = new EventEmitter();
 
-  constructor(private formBuilder: FormBuilder, private taskService: TaskService) { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
-    this.uploadForm = this.formBuilder.group({
-      profile: ['']
-    });
   }
 
   onEnter() {
     const formData = this.createFormData();
 
-    this.taskService.addTask(formData).subscribe(
+    this.taskService.addOrUpdateTask(formData).subscribe(
       (res) => {
         this.addedTask.emit();
         this.newTask = '';

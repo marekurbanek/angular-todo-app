@@ -16,8 +16,10 @@ export class TaskListComponent implements OnInit {
 
   getTasks() {
     this.taskService.getTasks().subscribe(({ data }) => {
+      data.forEach(task => {
+        task.is_completed = !!task.is_completed;
+      });
       this.tasks = data;
     });
   }
-
 }
