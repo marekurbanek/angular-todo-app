@@ -59,6 +59,15 @@
   width: 100%;
 }
 
+.todo_list_delete {
+  margin-left: 0.7rem;
+  border-radius: 5px;
+  background-color: #e25858;
+  border: 0;
+  color: white;
+  font-weight: bold;
+}
+
 .todo__container, .todo__container * {
   box-shadow: none;
   outline: none;
