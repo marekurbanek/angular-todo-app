@@ -2,14 +2,13 @@
   <label>
     <input 
       type="checkbox" 
-      [disabled]='task.is_completed'
       [checked]="task.is_completed" 
       (change)="checkboxChanged(task)" 
-      />
-      <input 
-      type="text" 
-      [disabled]='task.is_completed'
-      [(value)]="task.task"  
+    />
+    <input 
+      type="text"
+      [value]="task.task"
+      (change)='taskTitleChanged($event)'
       class="todo_list_input" 
     />
     <button (click)="deleteTask(task.id)" class="todo_list_delete">x</button>

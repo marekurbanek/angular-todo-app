@@ -17,17 +17,24 @@ export class TaskComponent {
     this.taskService.addOrUpdateTask(formData).subscribe();
   }
 
+  taskTitleChanged(event) {
+    this.task.task = event.target.value;
+    const formData = this.createFormData();
+
+    this.taskService.addOrUpdateTask(formData).subscribe();
+  }
+
   deleteTask(id) {
     this.taskService.deleteTask(id).subscribe(res => {
       this.deletedTask.emit();
-    })
+    });
   }
 
   private createFormData() {
     const formData = new FormData();
     formData.append('id', this.task.id);
     formData.append('task', this.task.task);
-    formData.append('is_completed', `${this.task.is_completed}`);
+    formData.append('is_completed', `${this.task.is_completed ? 1 : 0}`);
     return formData;
   }
 }
